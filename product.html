@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | PolyStamp & Print Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="PolyStamp" class="logo__img"></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="product-detail">
+    <div class="container" id="product-content">
+      <p>Loading...</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <span class="logo"><img src="images/logo.png" alt="PolyStamp" class="logo__img"></span>
+        <p>PolyStamp & Print Service — Johor Bahru.</p>
+      </div>
+      <div class="footer__links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="https://wa.me/60167737910" target="_blank" rel="noopener">Make an Order</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h5>Contact</h5>
+        <a href="tel:0167737910">Tel: 016 773 7910</a>
+        <a href="https://wa.me/60167737910" target="_blank" rel="noopener">WhatsApp: 016 773 7910</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 PolyStamp & Print Service.</p>
+    </div>
+  </footer>
+
+  <script>
+    const PRODUCTS = {
+      // ===== COMPANY STAMPS =====
+      'ae2563-address': {
+        name: 'AE 2563 Company Address Stamp | Pre-Inked',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/ae2563.png',
+        description: 'Pre-inked company address stamp delivering crisp, consistent impressions. Rectangular format ideal for company addresses, invoices, and official correspondence.',
+        specs: ['Type: Pre-Inked (Gel)', 'Impression area: 25×63mm', 'Multiple ink colours available', 'Up to 10,000 impressions', 'Compact design'],
+        body: '<h3>Ideal For</h3><p>Company address stamps, invoice headers, letterhead stamps. Perfect for businesses that need reliable, mess-free stamping without ink pads.</p>'
+      },
+      'p40-address': {
+        name: 'Printer 40 Company Address Stamp | Self-Inking',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/p40-company.png',
+        description: 'COLOP Printer 40 self-inking company address stamp. Automatic re-inking with every impression. Impression area 23×59mm.',
+        specs: ['Type: Self-Inking (COLOP)', 'Impression area: 23×59mm', 'Auto re-inking mechanism', 'Replaceable ink pad', 'Durable plastic housing'],
+        body: '<h3>Ideal For</h3><p>High-volume address stamping in offices. The self-inking mechanism means no ink pad needed — just stamp and go.</p>'
+      },
+      'ad2-flash-address': {
+        name: 'AD2 Company Address Stamp | AE Flash',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/ad2-flash.png',
+        description: 'Flash pre-inked company address stamp. Clean, sharp imprint with long-lasting ink technology.',
+        specs: ['Type: Flash Pre-Inked', 'Clean sharp impressions', 'Long-lasting ink', 'Compact and portable', 'Multiple colours available'],
+        body: '<h3>Ideal For</h3><p>Businesses wanting a premium stamp with ultra-clean impressions. Flash technology delivers sharper detail than traditional stamps.</p>'
+      },
+      'ae26-round': {
+        name: 'AE 26 Round Company Stamp | Pre-Inked',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/ae26-round.png',
+        description: 'Round pre-inked company stamp. 26mm diameter. Perfect for official company round stamps with logo and text.',
+        specs: ['Type: Pre-Inked (Gel)', 'Diameter: 26mm', 'Round format', 'Logo and text compatible', 'Multiple ink colours'],
+        body: '<h3>Ideal For</h3><p>Official company round stamps, brand stamps, and circular logo stamps for documents and letters.</p>'
+      },
+      'r24-round': {
+        name: 'R24 Round Company Stamp | Self-Inking',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/r24-round.png',
+        description: 'COLOP R24 round self-inking company stamp. 24mm diameter with automatic re-inking.',
+        specs: ['Type: Self-Inking (COLOP)', 'Diameter: 24mm', 'Auto re-inking', 'Replaceable ink pad', 'Durable design'],
+        body: '<h3>Ideal For</h3><p>Company round stamps for daily office use. The self-inking mechanism is perfect for high-volume stamping.</p>'
+      },
+      'round-flash': {
+        name: 'Round Company Stamp | AE Flash',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/ar2a-round-flash.png',
+        description: 'Round flash pre-inked company stamp. Premium quality imprint with flash technology.',
+        specs: ['Type: Flash Pre-Inked', 'Round format', 'Sharp detail reproduction', 'Long ink life', 'Multiple colours'],
+        body: '<h3>Ideal For</h3><p>Companies wanting the sharpest possible round stamp impression. Flash technology excels at detailed logos and small text.</p>'
+      },
+      'p20-name': {
+        name: 'Printer 20 Company Name Stamp',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/p20-company-name.png',
+        description: 'Compact COLOP Printer 20 for company name stamping. Impression area 14×38mm.',
+        specs: ['Type: Self-Inking (COLOP)', 'Impression area: 14×38mm', 'Compact size', 'Auto re-inking', 'Ideal for names'],
+        body: '<h3>Ideal For</h3><p>Quick company name identification on documents, receipts, and forms.</p>'
+      },
+      'p40-signature': {
+        name: 'Printer 40 Company Signature Stamp | Self-Inking',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/p40-signature.png',
+        description: 'Self-inking signature stamp for company authorised signing. Reproduces your signature accurately.',
+        specs: ['Type: Self-Inking (COLOP)', 'Impression area: 23×59mm', 'Signature reproduction', 'Auto re-inking', 'Replaceable pad'],
+        body: '<h3>Ideal For</h3><p>Authorised signatories who need to stamp their signature on high volumes of documents.</p>'
+      },
+      'es40-seal': {
+        name: 'ES-40 Company Common Seal',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/es40-common-seal.png',
+        description: 'Official company common seal (embosser) for legal documents. High-quality brass plate engraving.',
+        specs: ['Type: Embosser / Common Seal', 'Brass plate engraving', 'Pocket-sized design', 'For legal documents', 'SSM compliant'],
+        body: '<h3>Ideal For</h3><p>Companies requiring an official embossing seal for certificates, contracts, and legal documents.</p>'
+      },
+      'ae-set1': {
+        name: 'AE-SET1 Company Stamp Set',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/ae-set1.jpg',
+        description: 'Complete company stamp set including address stamp and round company stamp.',
+        specs: ['Includes address stamp', 'Includes round stamp', 'Pre-inked gel type', 'Value bundle', 'Multiple ink colours'],
+        body: '<h3>What\'s Included</h3><p>Perfect starter set for new companies. Includes rectangular address stamp and round company stamp.</p>'
+      },
+      'ae-set2': {
+        name: 'AE-SET2 Company Stamp Set',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/ae-set2.jpg',
+        description: 'Premium company stamp set with address stamp, round stamp, and additional accessories.',
+        specs: ['Includes address stamp', 'Includes round stamp', 'Premium bundle', 'Pre-inked gel type', 'Multiple colours'],
+        body: '<h3>What\'s Included</h3><p>Complete set for established businesses. Everything you need for professional company stamping.</p>'
+      },
+      'embossing-gold': {
+        name: 'Embossing Gold Label',
+        category: 'Company Stamps', categoryLink: 'products.html#company-stamps',
+        image: 'images/products/embossing-gold.jpg',
+        description: 'Gold foil embossing labels for use with common seals and embossers.',
+        specs: ['Gold foil finish', 'Self-adhesive', 'For use with embossers', 'Professional appearance', 'Pack quantity varies'],
+        body: '<h3>How to Use</h3><p>Apply gold label to document, then emboss with your common seal for a premium gold-embossed appearance.</p>'
+      },
+
+      // ===== PRE-INKED STAMPS =====
+      'ae623': { name: 'AE 623', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae623.png', description: 'Compact rectangular pre-inked gel stamp. Impression area 6×23mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 6×23mm', 'Multiple ink colours', 'Up to 10,000 impressions'], body: '<h3>Ideal For</h3><p>Small text stamps, initials, and short messages.</p>' },
+      'ae09': { name: 'AE 09', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae09.png', description: 'Small rectangular pre-inked gel stamp. Impression area 9×25mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 9×25mm', 'Multiple ink colours', 'Compact design'], body: '<h3>Ideal For</h3><p>Small office stamps, received stamps, and short text.</p>' },
+      'ae929': { name: 'AE 929', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae929.png', description: 'Square pre-inked gel stamp. Impression area 9×29mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 9×29mm', 'Multiple ink colours', 'Versatile size'], body: '<h3>Ideal For</h3><p>Office stamps, date stamps, and medium text.</p>' },
+      'ae15': { name: 'AE 15', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae15.png', description: 'Medium rectangular pre-inked gel stamp. Impression area 15×43mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 15×43mm', 'Multiple ink colours', 'Great for addresses'], body: '<h3>Ideal For</h3><p>Address stamps, company names, and multi-line text.</p>' },
+      'ae1313': { name: 'AE 1313', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae1313.png', description: 'Square pre-inked gel stamp. Impression area 13×13mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 13×13mm', 'Square format', 'Logo compatible'], body: '<h3>Ideal For</h3><p>Small logos, monograms, and square designs.</p>' },
+      'ae22': { name: 'AE 22', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae22.png', description: 'Large rectangular pre-inked gel stamp. Impression area 22×58mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 22×58mm', 'Multiple ink colours', 'Popular size'], body: '<h3>Ideal For</h3><p>Company addresses, multi-line stamps, and detailed text.</p>' },
+      'ae1919': { name: 'AE 1919', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae1919.png', description: 'Large square pre-inked gel stamp. Impression area 19×19mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 19×19mm', 'Square format', 'Logo compatible'], body: '<h3>Ideal For</h3><p>Logos, graphics, QR codes, and square designs.</p>' },
+      'ae1351': { name: 'AE 1351', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae1351.png', description: 'Rectangular pre-inked gel stamp. Impression area 13×51mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 13×51mm', 'Wide format', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Company names, addresses, and wide-format text stamps.</p>' },
+      'ae26': { name: 'AE 26', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae26.png', description: 'Round pre-inked gel stamp. Diameter 26mm.', specs: ['Type: Pre-Inked (Gel)', 'Diameter: 26mm', 'Round format', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Company round stamps, official seals, and circular logos.</p>' },
+      'ae34': { name: 'AE 34', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae34.png', description: 'Large rectangular pre-inked gel stamp. Impression area 26×63mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 26×63mm', 'Large format', 'Detailed text compatible'], body: '<h3>Ideal For</h3><p>Detailed company stamps with address, phone, and website information.</p>' },
+      'ov2538': { name: 'OV 2538', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ov2538.png', description: 'Oval pre-inked gel stamp. Impression area 25×38mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 25×38mm', 'Oval format', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Oval company stamps, branding, and professional logos.</p>' },
+      'ae40': { name: 'AE 40', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae40.png', description: 'Extra-large rectangular pre-inked gel stamp. Impression area 25×63mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 25×63mm', 'Extra-large format', 'Up to 10,000 impressions'], body: '<h3>Ideal For</h3><p>Full company address stamps with all details.</p>' },
+      'ov3248': { name: 'OV 3248', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ov3248.png', description: 'Large oval pre-inked gel stamp. Impression area 32×48mm.', specs: ['Type: Pre-Inked (Gel)', 'Size: 32×48mm', 'Large oval format', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Large oval company stamps and detailed logo reproduction.</p>' },
+      'ae45': { name: 'AE 45', category: 'Pre-Inked Stamps', categoryLink: 'products.html#pre-inked-stamps', image: 'images/products/ae45.png', description: 'Large round pre-inked gel stamp. Diameter 45mm.', specs: ['Type: Pre-Inked (Gel)', 'Diameter: 45mm', 'Large round format', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Large company round stamps, detailed circular logos, and professional seals.</p>' },
+
+      // ===== SELF-INKING STAMPS =====
+      'mini-pocket': { name: 'Mini Pocket', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/mini-pocket.png', description: 'Ultra-compact COLOP pocket stamp. Perfect for on-the-go use.', specs: ['Type: Self-Inking (COLOP)', 'Ultra-compact design', 'Folds flat', 'Multiple ink colours'], body: '<h3>Ideal For</h3><p>Professionals who need a stamp while travelling or at client meetings.</p>' },
+      'r12': { name: 'R12', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/r12.png', description: 'Small round COLOP self-inking stamp. 12mm diameter.', specs: ['Type: Self-Inking (COLOP)', 'Diameter: 12mm', 'Auto re-inking', 'Replaceable pad'], body: '<h3>Ideal For</h3><p>Small round stamps, initials, and monograms.</p>' },
+      'p10': { name: 'P10', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/colop-p10.png', description: 'Compact COLOP self-inking stamp. Impression area 10×27mm.', specs: ['Type: Self-Inking (COLOP)', 'Size: 10×27mm', 'Auto re-inking', 'Replaceable pad'], body: '<h3>Ideal For</h3><p>Small text stamps, initials, and received stamps.</p>' },
+      'pocket-plus-20': { name: 'Pocket Plus 20', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/pocket-plus-20.png', description: 'Portable COLOP pocket stamp. Impression area 14×38mm. Folds flat for easy carrying.', specs: ['Type: Self-Inking Pocket', 'Size: 14×38mm', 'Folds flat', 'Travel-friendly'], body: '<h3>Ideal For</h3><p>Professionals on the go who need a compact, portable stamp.</p>' },
+      'p20': { name: 'P20', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/colop-p20.png', description: 'COLOP Printer 20 self-inking stamp. Impression area 14×38mm.', specs: ['Type: Self-Inking (COLOP)', 'Size: 14×38mm', 'Auto re-inking', 'Popular size'], body: '<h3>Ideal For</h3><p>Company names, short addresses, and general office use.</p>' },
+      'r17': { name: 'R17', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/r17.png', description: 'Round COLOP self-inking stamp. 17mm diameter.', specs: ['Type: Self-Inking (COLOP)', 'Diameter: 17mm', 'Round format', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>Small round company stamps and monograms.</p>' },
+      'colop-r24': { name: 'R24', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/r24.png', description: 'Round COLOP self-inking stamp. 24mm diameter. Best-selling round stamp.', specs: ['Type: Self-Inking (COLOP)', 'Diameter: 24mm', 'Most popular round size', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>Company round stamps. The most popular size for business use.</p>' },
+      'p30': { name: 'P30', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/colop-p30.png', description: 'COLOP Printer 30 self-inking stamp. Impression area 18×47mm.', specs: ['Type: Self-Inking (COLOP)', 'Size: 18×47mm', 'Auto re-inking', 'Replaceable pad'], body: '<h3>Ideal For</h3><p>Medium-sized company stamps, addresses, and multi-line text.</p>' },
+      'pocket-plus-30': { name: 'Pocket Plus 30', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/pocket-plus-30.png', description: 'COLOP Pocket Plus 30. Impression area 18×47mm. Portable design.', specs: ['Type: Self-Inking Pocket', 'Size: 18×47mm', 'Folds flat', 'Travel-friendly'], body: '<h3>Ideal For</h3><p>Portable stamp for medium-sized impressions. Great for field work.</p>' },
+      's160': { name: 'S160', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/s160.png', description: 'COLOP S160 mini dater stamp with adjustable date band.', specs: ['Type: Self-Inking Dater', 'Adjustable date', 'Compact size', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>Date stamping on documents, receipts, and forms.</p>' },
+      'r30': { name: 'R30', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/r30.png', description: 'Round COLOP self-inking stamp. 30mm diameter.', specs: ['Type: Self-Inking (COLOP)', 'Diameter: 30mm', 'Large round format', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>Larger company round stamps with detailed text and logos.</p>' },
+      'p40': { name: 'P40', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/colop-p40.png', description: 'COLOP Printer 40 self-inking stamp. Impression area 23×59mm. Best-selling size.', specs: ['Type: Self-Inking (COLOP)', 'Size: 23×59mm', 'Best-selling size', 'Auto re-inking', 'Replaceable pad'], body: '<h3>Ideal For</h3><p>The most popular stamp size. Perfect for full company address stamps.</p>' },
+      'r40': { name: 'R40', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/r40.png', description: 'Large round COLOP self-inking stamp. 40mm diameter.', specs: ['Type: Self-Inking (COLOP)', 'Diameter: 40mm', 'Large round', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>Large company round stamps with detailed logos and text.</p>' },
+      'p50': { name: 'P50', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/colop-p50.png', description: 'Large COLOP self-inking stamp. Impression area 30×69mm.', specs: ['Type: Self-Inking (COLOP)', 'Size: 30×69mm', 'Large format', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>Large stamps with detailed content, logos, and multi-line addresses.</p>' },
+      'p60': { name: 'P60', category: 'Self-Inking Stamps', categoryLink: 'products.html#self-inking-stamps', image: 'images/products/colop-p60.png', description: 'Extra-large COLOP self-inking stamp. Impression area 37×76mm.', specs: ['Type: Self-Inking (COLOP)', 'Size: 37×76mm', 'Extra-large format', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>The largest self-inking stamp. For stamps with extensive content and graphics.</p>' },
+
+      // ===== FLASH STAMPS =====
+      'ar1': { name: 'AR1', category: 'Flash Stamps', categoryLink: 'products.html#flash-stamps', image: 'images/products/ar1-flash.png', description: 'Small round flash pre-inked stamp.', specs: ['Type: Flash Pre-Inked', 'Round format', 'Sharp impressions', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Small round stamps, initials, and compact logos.</p>' },
+      'ak': { name: 'AK', category: 'Flash Stamps', categoryLink: 'products.html#flash-stamps', image: 'images/products/ak-flash.png', description: 'Compact rectangular flash pre-inked stamp.', specs: ['Type: Flash Pre-Inked', 'Rectangular format', 'Compact size', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Small text stamps and initials.</p>' },
+      'aa': { name: 'AA', category: 'Flash Stamps', categoryLink: 'products.html#flash-stamps', image: 'images/products/aa-flash.png', description: 'Small rectangular flash pre-inked stamp.', specs: ['Type: Flash Pre-Inked', 'Rectangular format', 'Sharp detail', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Office stamps, received stamps, and short text.</p>' },
+      'ar2': { name: 'AR2', category: 'Flash Stamps', categoryLink: 'products.html#flash-stamps', image: 'images/products/ar2-flash.png', description: 'Medium round flash pre-inked stamp.', specs: ['Type: Flash Pre-Inked', 'Round format', 'Medium size', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Company round stamps with medium detail.</p>' },
+      'aj': { name: 'AJ', category: 'Flash Stamps', categoryLink: 'products.html#flash-stamps', image: 'images/products/aj-flash.png', description: 'Medium rectangular flash pre-inked stamp.', specs: ['Type: Flash Pre-Inked', 'Rectangular format', 'Medium size', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Company stamps, addresses, and multi-line text.</p>' },
+      'ac': { name: 'AC', category: 'Flash Stamps', categoryLink: 'products.html#flash-stamps', image: 'images/products/ac-flash.png', description: 'Square flash pre-inked stamp for logos and graphics.', specs: ['Type: Flash Pre-Inked', 'Square format', 'Logo compatible', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Square logos, QR codes, and graphic stamps.</p>' },
+      'ar3': { name: 'AR3', category: 'Flash Stamps', categoryLink: 'products.html#flash-stamps', image: 'images/products/ar3-flash.png', description: 'Large round flash pre-inked stamp.', specs: ['Type: Flash Pre-Inked', 'Round format', 'Large size', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Large company round stamps with detailed logos.</p>' },
+      'aj4': { name: 'AJ4', category: 'Flash Stamps', categoryLink: 'products.html#flash-stamps', image: 'images/products/aj4-flash.png', description: 'Large rectangular flash pre-inked stamp for company addresses.', specs: ['Type: Flash Pre-Inked', 'Rectangular format', 'Large size', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Full company address stamps with detailed content.</p>' },
+
+      // ===== LOGO STAMPS =====
+      'square-logo': { name: 'Square Logo Stamp | Pre-Inked', category: 'Logo Stamps', categoryLink: 'products.html#logo-stamps', image: 'images/products/square-logo-preinked.png', description: 'Custom square logo stamp. Pre-inked for clean, consistent impressions.', specs: ['Type: Pre-Inked', 'Square format', 'Custom logo', 'Multiple colours'], body: '<h3>How to Order</h3><p>Send your logo file via WhatsApp. We will create your custom stamp.</p>' },
+      'oval-logo': { name: 'Oval Logo Stamp | Pre-Inked', category: 'Logo Stamps', categoryLink: 'products.html#logo-stamps', image: 'images/products/oval-logo-preinked.png', description: 'Custom oval logo stamp. Pre-inked technology for premium impressions.', specs: ['Type: Pre-Inked', 'Oval format', 'Custom logo', 'Multiple colours'], body: '<h3>How to Order</h3><p>Send your logo file via WhatsApp for a custom oval stamp.</p>' },
+      'round-logo': { name: 'Round Logo Stamp | Pre-Inked', category: 'Logo Stamps', categoryLink: 'products.html#logo-stamps', image: 'images/products/round-logo-preinked.png', description: 'Custom round logo stamp. Detailed reproduction of your circular logo.', specs: ['Type: Pre-Inked', 'Round format', 'Custom logo', 'Multiple colours'], body: '<h3>How to Order</h3><p>Send your round logo via WhatsApp for a custom stamp.</p>' },
+      'rect-logo': { name: 'Rectangle Logo Stamp | Pre-Inked', category: 'Logo Stamps', categoryLink: 'products.html#logo-stamps', image: 'images/products/rect-logo-preinked.png', description: 'Custom rectangular logo stamp. Ideal for detailed logo reproduction.', specs: ['Type: Pre-Inked', 'Rectangular format', 'Custom logo', 'Multiple colours'], body: '<h3>How to Order</h3><p>Send your logo file via WhatsApp for a custom rectangular stamp.</p>' },
+
+      // ===== SIGNATURE STAMPS =====
+      'pocket-sig': { name: 'Pocket Plus 20 Signature Stamp', category: 'Signature Stamps', categoryLink: 'products.html#signature-stamps', image: 'images/products/pocket-sig.png', description: 'Portable pocket-sized signature stamp. Folds flat for easy carrying.', specs: ['Type: Self-Inking Pocket', 'Portable design', 'Folds flat', 'Signature reproduction'], body: '<h3>How to Order</h3><p>Send a clear scan of your signature via WhatsApp.</p>' },
+      'small-sig': { name: 'Small Self-Inking Signature Stamp', category: 'Signature Stamps', categoryLink: 'products.html#signature-stamps', image: 'images/products/small-sig-selfink.png', description: 'Compact self-inking stamp reproducing your signature accurately.', specs: ['Type: Self-Inking (COLOP)', 'Compact size', 'Auto re-inking', 'Accurate reproduction'], body: '<h3>Ideal For</h3><p>Daily signature stamping on documents and forms.</p>' },
+      'medium-sig': { name: 'Medium Self-Inking Signature Stamp', category: 'Signature Stamps', categoryLink: 'products.html#signature-stamps', image: 'images/products/medium-sig-selfink.png', description: 'Medium self-inking signature stamp for everyday use.', specs: ['Type: Self-Inking (COLOP)', 'Medium size', 'Auto re-inking', 'Clear reproduction'], body: '<h3>Ideal For</h3><p>Standard signature stamping. Most popular size.</p>' },
+      'large-sig': { name: 'Large Self-Inking Signature Stamp', category: 'Signature Stamps', categoryLink: 'products.html#signature-stamps', image: 'images/products/large-sig-selfink.png', description: 'Large self-inking stamp for full-size signature reproduction.', specs: ['Type: Self-Inking (COLOP)', 'Large size', 'Full signature', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>Full-size signature reproduction with maximum detail.</p>' },
+
+      // ===== DATE STAMPS =====
+      'r24d': { name: 'R24D', category: 'Date Stamps', categoryLink: 'products.html#date-stamps', image: 'images/products/r24d-date.png', description: 'Round self-inking date stamp with adjustable date band. 24mm diameter.', specs: ['Type: Self-Inking Dater', 'Diameter: 24mm', 'Adjustable date', 'Custom text option'], body: '<h3>Ideal For</h3><p>Date stamping on receipts, documents, and forms.</p>' },
+      'p35d': { name: 'P35D', category: 'Date Stamps', categoryLink: 'products.html#date-stamps', image: 'images/products/p35d-date.png', description: 'Rectangular self-inking date stamp with customisable text.', specs: ['Type: Self-Inking Dater', 'Rectangular format', 'Adjustable date', 'Custom text option'], body: '<h3>Ideal For</h3><p>Office date stamping with custom text like RECEIVED, PAID, etc.</p>' },
+      'p55d': { name: 'P55D', category: 'Date Stamps', categoryLink: 'products.html#date-stamps', image: 'images/products/p55d-date.png', description: 'Large self-inking date stamp with date and custom text area.', specs: ['Type: Self-Inking Dater', 'Large format', 'Date + custom text', 'Auto re-inking'], body: '<h3>Ideal For</h3><p>Large date stamps with company name and additional text.</p>' },
+
+      // ===== COMMON SEAL =====
+      'pocket-seal': { name: 'Pocket Seal', category: 'Common Seal', categoryLink: 'products.html#common-seal', image: 'images/products/pocket-seal.png', description: 'Portable pocket-sized common seal embosser for legal documents. High-quality brass plate engraving.', specs: ['Type: Pocket Embosser', 'Brass plate', 'Portable design', 'Legal document use'], body: '<h3>Ideal For</h3><p>Company common seals for contracts, certificates, and official documents.</p>' },
+      'desk-s1': { name: 'DESK-S1', category: 'Common Seal', categoryLink: 'products.html#common-seal', image: 'images/products/desk-s1.png', description: 'Desktop common seal embosser. Heavy-duty design for daily office use.', specs: ['Type: Desktop Embosser', 'Brass plate', 'Heavy-duty', 'Office use'], body: '<h3>Ideal For</h3><p>Office-based common seal use. Sturdy desktop design for daily stamping.</p>' },
+      'desk-s3': { name: 'DESK-S3', category: 'Common Seal', categoryLink: 'products.html#common-seal', image: 'images/products/desk-s3.jpg', description: 'Premium desktop embosser with extended reach for bound documents.', specs: ['Type: Desktop Embosser', 'Extended reach', 'For bound documents', 'Heavy-duty'], body: '<h3>Ideal For</h3><p>Embossing bound documents and certificates with extended reach.</p>' },
+      'desk-s5': { name: 'DESK-S5', category: 'Common Seal', categoryLink: 'products.html#common-seal', image: 'images/products/desk-s5.png', description: 'Heavy-duty professional desktop embosser for large-volume use.', specs: ['Type: Heavy-Duty Embosser', 'Professional grade', 'Large volume', 'Premium build'], body: '<h3>Ideal For</h3><p>High-volume embossing for law firms, corporate secretaries, and government offices.</p>' },
+      'embossing-gold-label': { name: 'Embossing Gold Label', category: 'Common Seal', categoryLink: 'products.html#common-seal', image: 'images/products/embossing-gold.jpg', description: 'Gold foil labels for use with common seal embossers.', specs: ['Gold foil finish', 'Self-adhesive', 'For embossers', 'Premium look'], body: '<h3>How to Use</h3><p>Apply to document before embossing for a gold-embossed seal effect.</p>' },
+
+      // ===== TEACHER STAMPS =====
+      'teacher-great': { name: 'Great!', category: 'Teacher Stamps', categoryLink: 'products.html#teacher-stamps', image: 'images/products/teacher-great.jpg', description: 'Fun motivational stamp for teachers with "Great!" message.', specs: ['Wooden handle', 'Pre-inked', 'Fun design', 'Motivational'], body: '<h3>Ideal For</h3><p>Teachers motivating students with fun stamp rewards on homework and tests.</p>' },
+      'teacher-nicejob': { name: 'Nice Job!', category: 'Teacher Stamps', categoryLink: 'products.html#teacher-stamps', image: 'images/products/teacher-nicejob.jpg', description: 'Encouraging "Nice Job!" stamp for student work.', specs: ['Wooden handle', 'Pre-inked', 'Fun design', 'Encouraging'], body: '<h3>Ideal For</h3><p>Rewarding good student work with positive feedback.</p>' },
+      'teacher-terrific': { name: 'Terrific!', category: 'Teacher Stamps', categoryLink: 'products.html#teacher-stamps', image: 'images/products/teacher-terrific.jpg', description: 'Motivational "Terrific!" stamp for outstanding work.', specs: ['Wooden handle', 'Pre-inked', 'Fun design', 'Celebratory'], body: '<h3>Ideal For</h3><p>Celebrating exceptional student achievements.</p>' },
+      'teacher-wow': { name: 'WOW!', category: 'Teacher Stamps', categoryLink: 'products.html#teacher-stamps', image: 'images/products/teacher-wow.jpg', description: 'Exciting "WOW!" stamp for amazing student work.', specs: ['Wooden handle', 'Pre-inked', 'Fun design', 'Exciting'], body: '<h3>Ideal For</h3><p>Making students feel amazing about their achievements.</p>' },
+
+      // ===== NAME TAGS (Engraved, Colour, Metal, Reusable) =====
+      'tag1': { name: 'Model: Tag 1', category: 'Engraved Name Tags', categoryLink: 'products.html#engraved-name-tags', image: 'images/products/tag1.jpg', description: 'Classic engraved name tag with metal pin or magnet fastener. Multiple colour options.', specs: ['Engraved text', 'Metal pin or magnet', 'Multiple colours', 'Durable material'], body: '<h3>Customisation</h3><p>Choose your colour, text, and attachment type. Bulk discounts available.</p>' },
+      'tag2': { name: 'Model: Tag 2', category: 'Engraved Name Tags', categoryLink: 'products.html#engraved-name-tags', image: 'images/products/tag2.jpg', description: 'Engraved name tag with rounded corners. Professional look for corporate use.', specs: ['Rounded corners', 'Metal pin or magnet', 'Multiple colours', 'Professional finish'], body: '<h3>Ideal For</h3><p>Corporate offices, retail staff, and hospitality teams.</p>' },
+      'tag6': { name: 'Model: Tag 6', category: 'Engraved Name Tags', categoryLink: 'products.html#engraved-name-tags', image: 'images/products/tag6.jpg', description: 'Premium gold-finish engraved name tag. Elegant design for executive use.', specs: ['Gold finish', 'Engraved text', 'Metal pin or magnet', 'Premium material'], body: '<h3>Ideal For</h3><p>Executive staff, luxury retail, and premium corporate environments.</p>' },
+      'tag9': { name: 'Model: Tag 9', category: 'Engraved Name Tags', categoryLink: 'products.html#engraved-name-tags', image: 'images/products/tag9.jpg', description: 'Large engraved name tag with multiple colour options.', specs: ['Large size', 'Multiple colours', 'Engraved text', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Staff with long names or titles requiring larger display area.</p>' },
+      'tag10': { name: 'Model: Tag 10', category: 'Engraved Name Tags', categoryLink: 'products.html#engraved-name-tags', image: 'images/products/tag10.jpg', description: 'Wide-format engraved name tag for detailed information.', specs: ['Wide format', 'Engraved text', 'Multiple colours', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Displaying name, title, and department information.</p>' },
+      'tag11': { name: 'Model: Tag 11', category: 'Engraved Name Tags', categoryLink: 'products.html#engraved-name-tags', image: 'images/products/tag11.jpg', description: 'Compact engraved name tag. Cost-effective for bulk orders.', specs: ['Compact size', 'Engraved text', 'Bulk pricing', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Large teams needing affordable, professional name tags.</p>' },
+      'tag12': { name: 'Model: Tag 12', category: 'Engraved Name Tags', categoryLink: 'products.html#engraved-name-tags', image: 'images/products/tag12.jpg', description: 'Slim engraved name tag available in various colours.', specs: ['Slim design', 'Multiple colours', 'Engraved text', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Minimalist name identification for offices and events.</p>' },
+      'tag13': { name: 'Model: Tag 13', category: 'Engraved Name Tags', categoryLink: 'products.html#engraved-name-tags', image: 'images/products/tag13.jpg', description: 'Badge-style engraved name tag with pin backing.', specs: ['Badge style', 'Engraved text', 'Pin backing', 'Multiple colours'], body: '<h3>Ideal For</h3><p>Events, conferences, and staff identification.</p>' },
+      'tag9c': { name: 'Model: Tag 9C', category: 'Colour Name Tags', categoryLink: 'products.html#colour-name-tags', image: 'images/products/tag9c.jpg', description: 'Full-colour printed name tag with logo support.', specs: ['Full colour print', 'Logo support', 'Pin or magnet', 'UV protected'], body: '<h3>Ideal For</h3><p>Brand-consistent name tags with logos and colours.</p>' },
+      'tag10c': { name: 'Model: Tag 10C', category: 'Colour Name Tags', categoryLink: 'products.html#colour-name-tags', image: 'images/products/tag10c.jpg', description: 'Wide-format colour printed name tag for detailed branding.', specs: ['Wide format', 'Full colour', 'Logo support', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Detailed branding with name, title, and company logo.</p>' },
+      'tag11c': { name: 'Model: Tag 11C', category: 'Colour Name Tags', categoryLink: 'products.html#colour-name-tags', image: 'images/products/tag11c.jpg', description: 'Compact colour printed name tag with vibrant graphics.', specs: ['Compact size', 'Vibrant colour', 'Logo support', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Teams wanting colourful branded name tags.</p>' },
+      'tag12c': { name: 'Model: Tag 12C', category: 'Colour Name Tags', categoryLink: 'products.html#colour-name-tags', image: 'images/products/tag12c.jpg', description: 'Slim colour printed name tag with full-colour logo.', specs: ['Slim design', 'Full colour', 'Logo support', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Minimalist branded name identification.</p>' },
+      'tag13c': { name: 'Model: Tag 13C', category: 'Colour Name Tags', categoryLink: 'products.html#colour-name-tags', image: 'images/products/tag13c.jpg', description: 'Silver-finish colour printed name tag. Premium appearance.', specs: ['Silver finish', 'Full colour', 'Logo support', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Premium branded name tags for executive and corporate use.</p>' },
+      'tag14c': { name: 'Model: Tag 14C', category: 'Colour Name Tags', categoryLink: 'products.html#colour-name-tags', image: 'images/products/tag14c.png', description: 'Colour printed name tag with rounded design.', specs: ['Rounded design', 'Full colour', 'Logo support', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Modern branded name identification with soft design.</p>' },
+      'tag15c': { name: 'Model: Tag 15C', category: 'Colour Name Tags', categoryLink: 'products.html#colour-name-tags', image: 'images/products/tag15c.png', description: 'Badge-style colour printed name tag with full branding.', specs: ['Badge style', 'Full colour', 'Full branding', 'Pin or magnet'], body: '<h3>Ideal For</h3><p>Events and conferences with full brand presence.</p>' },
+      'tag8-3': { name: 'Model: Tag 8-3', category: 'Metal Name Tags', categoryLink: 'products.html#metal-name-tags', image: 'images/products/tag8-3.jpg', description: 'Premium metal name tag with brushed finish.', specs: ['Metal construction', 'Brushed finish', 'Pin or magnet', 'Durable'], body: '<h3>Ideal For</h3><p>Executive staff and luxury retail environments.</p>' },
+      'tag8-4': { name: 'Model: Tag 8-4', category: 'Metal Name Tags', categoryLink: 'products.html#metal-name-tags', image: 'images/products/tag8-4.jpg', description: 'Polished metal name tag with professional appearance.', specs: ['Metal construction', 'Polished finish', 'Pin or magnet', 'Professional'], body: '<h3>Ideal For</h3><p>Corporate offices and formal environments.</p>' },
+      'tag8-5': { name: 'Model: Tag 8-5', category: 'Metal Name Tags', categoryLink: 'products.html#metal-name-tags', image: 'images/products/tag8-5.jpg', description: 'Slim metal name tag for executive use.', specs: ['Slim design', 'Metal construction', 'Pin or magnet', 'Executive look'], body: '<h3>Ideal For</h3><p>Executive and premium corporate identification.</p>' },
+      'tag8-6': { name: 'Model: Tag 8-6', category: 'Metal Name Tags', categoryLink: 'products.html#metal-name-tags', image: 'images/products/tag8-6.jpg', description: 'Wide metal name tag for name and designation.', specs: ['Wide format', 'Metal construction', 'Pin or magnet', 'Designation display'], body: '<h3>Ideal For</h3><p>Displaying name and job title on a premium metal tag.</p>' },
+      'tag8-7': { name: 'Model: Tag 8-7', category: 'Metal Name Tags', categoryLink: 'products.html#metal-name-tags', image: 'images/products/tag8-7.jpg', description: 'Compact metal name tag. Durable for daily wear.', specs: ['Compact size', 'Metal construction', 'Pin or magnet', 'Daily wear'], body: '<h3>Ideal For</h3><p>Everyday metal name identification for staff.</p>' },
+      'tag8-8': { name: 'Model: Tag 8-8', category: 'Metal Name Tags', categoryLink: 'products.html#metal-name-tags', image: 'images/products/tag8-8.jpg', description: 'Metal name tag with contemporary design.', specs: ['Contemporary design', 'Metal construction', 'Pin or magnet', 'Premium finish'], body: '<h3>Ideal For</h3><p>Modern offices seeking sleek metal name identification.</p>' },
+      'tag8-1': { name: 'Model: Tag 8-1', category: 'Reusable Name Tags', categoryLink: 'products.html#reusable-name-tags', image: 'images/products/tag8-1.jpg', description: 'Reusable name tag with replaceable inserts. Metal pin or magnet.', specs: ['Replaceable inserts', 'Metal frame', 'Pin or magnet', 'Long-lasting'], body: '<h3>Ideal For</h3><p>Offices with rotating staff or temporary personnel.</p>' },
+      'tag8-2': { name: 'Model: Tag 8-2', category: 'Reusable Name Tags', categoryLink: 'products.html#reusable-name-tags', image: 'images/products/tag8-2.jpg', description: 'Reusable name tag with clear window for paper inserts.', specs: ['Clear window', 'Paper inserts', 'Pin or magnet', 'Reusable'], body: '<h3>Ideal For</h3><p>Events, conferences, and offices with frequently changing staff.</p>' },
+      'tag8-9': { name: 'Model: Tag 8-9', category: 'Reusable Name Tags', categoryLink: 'products.html#reusable-name-tags', image: 'images/products/tag8-9.jpg', description: 'Reusable name tag with modern frame design.', specs: ['Modern frame', 'Replaceable inserts', 'Pin or magnet', 'Professional'], body: '<h3>Ideal For</h3><p>Modern workplaces with reusable identification needs.</p>' },
+      'tag8-10': { name: 'Model: Tag 8-10', category: 'Reusable Name Tags', categoryLink: 'products.html#reusable-name-tags', image: 'images/products/tag8-10.jpg', description: 'Reusable name tag with clip-on attachment.', specs: ['Clip-on attachment', 'Replaceable inserts', 'Durable frame', 'Versatile'], body: '<h3>Ideal For</h3><p>Staff who prefer clip-on badges over pin or magnet.</p>' },
+      'tag8-11': { name: 'Model: Tag 8-11', category: 'Reusable Name Tags', categoryLink: 'products.html#reusable-name-tags', image: 'images/products/tag8-11.jpg', description: 'Reusable name tag with silver frame accent.', specs: ['Silver frame', 'Replaceable inserts', 'Pin or magnet', 'Elegant'], body: '<h3>Ideal For</h3><p>Professional settings requiring elegant reusable name tags.</p>' },
+      'tag8-12': { name: 'Model: Tag 8-12', category: 'Reusable Name Tags', categoryLink: 'products.html#reusable-name-tags', image: 'images/products/tag8-12.jpg', description: 'Reusable name tag with gold frame accent.', specs: ['Gold frame', 'Replaceable inserts', 'Pin or magnet', 'Premium look'], body: '<h3>Ideal For</h3><p>Luxury and executive environments with gold accents.</p>' },
+      'tag8-13': { name: 'Model: Tag 8-13', category: 'Reusable Name Tags', categoryLink: 'products.html#reusable-name-tags', image: 'images/products/tag8-13.jpg', description: 'Large reusable name tag for detailed information display.', specs: ['Large size', 'Replaceable inserts', 'Pin or magnet', 'Multi-line display'], body: '<h3>Ideal For</h3><p>Displaying name, title, and department on a reusable tag.</p>' },
+
+      // ===== DESK & WALL SIGNS =====
+      'wall-sign': { name: 'Wall Sign', category: 'Desk & Wall Signs', categoryLink: 'products.html#desk-wall-signs', image: 'images/products/wall-sign.png', description: 'Custom-made wall sign for offices and reception areas.', specs: ['Custom engraving', 'Wall mount', 'Professional finish', 'Various sizes'], body: '<h3>Ideal For</h3><p>Office doors, reception areas, and directional signage.</p>' },
+      'desk-sign': { name: 'Desk Sign', category: 'Desk & Wall Signs', categoryLink: 'products.html#desk-wall-signs', image: 'images/products/desk-sign.png', description: 'Desktop name plate and signage for professional offices.', specs: ['Desktop standing', 'Engraved text', 'Professional look', 'Various sizes'], body: '<h3>Ideal For</h3><p>Office desks, reception counters, and meeting rooms.</p>' },
+      'sw3': { name: '1 Layer Sliding Wall Sign | SW-3', category: 'Desk & Wall Signs', categoryLink: 'products.html#desk-wall-signs', image: 'images/products/sliding-wall-sw3.png', description: 'Sliding wall sign with interchangeable name plates.', specs: ['1 layer', 'Sliding mechanism', 'Interchangeable plates', 'Wall mount'], body: '<h3>Ideal For</h3><p>Office doors where occupant names change frequently.</p>' },
+      'sw4': { name: '1 Layer Sliding Wall Sign | SW-4', category: 'Desk & Wall Signs', categoryLink: 'products.html#desk-wall-signs', image: 'images/products/sliding-wall-sw4.png', description: 'Wider format sliding wall sign for longer names and titles.', specs: ['1 layer', 'Wide format', 'Sliding mechanism', 'Wall mount'], body: '<h3>Ideal For</h3><p>Office doors requiring wider display area.</p>' },
+      'sw-2layer': { name: '2 Layer Sliding Wall Sign', category: 'Desk & Wall Signs', categoryLink: 'products.html#desk-wall-signs', image: 'images/products/sliding-wall-2layer.png', description: 'Two-layer sliding wall sign for name and designation display.', specs: ['2 layers', 'Name + title', 'Sliding mechanism', 'Wall mount'], body: '<h3>Ideal For</h3><p>Office doors displaying both name and job title.</p>' },
+
+      // ===== LAPEL PINS =====
+      'lapel-20mm-round': { name: '20mm Round Lapel Pin', category: 'Lapel Pins', categoryLink: 'products.html#lapel-pins', image: 'images/products/lapel-20mm-round.png', description: 'Digitally printed 20mm round lapel pin with epoxy coating and butterfly clutch.', specs: ['Diameter: 20mm', 'Epoxy coating', 'Butterfly clutch', 'Full colour print'], body: '<h3>Ideal For</h3><p>Corporate branding, events, and team identification.</p>' },
+      'lapel-25mm-round': { name: '25mm Round Lapel Pin', category: 'Lapel Pins', categoryLink: 'products.html#lapel-pins', image: 'images/products/lapel-25mm-round.png', description: 'Medium 25mm round lapel pin with premium epoxy finish.', specs: ['Diameter: 25mm', 'Epoxy coating', 'Butterfly clutch', 'Full colour print'], body: '<h3>Ideal For</h3><p>Branding pins with more visible logo display.</p>' },
+      'lapel-30mm-round': { name: '30mm Round Lapel Pin', category: 'Lapel Pins', categoryLink: 'products.html#lapel-pins', image: 'images/products/lapel-30mm-round.png', description: 'Large 30mm round lapel pin for maximum brand visibility.', specs: ['Diameter: 30mm', 'Epoxy coating', 'Butterfly clutch', 'Full colour print'], body: '<h3>Ideal For</h3><p>Maximum visibility branding and event identification.</p>' },
+
+      // ===== WAX SEAL =====
+      'wax-seal-custom': { name: 'Custom Made Wax Seal Stamp', category: 'Wax Seal', categoryLink: 'products.html#wax-seal', image: 'images/products/wax-seal-custom.jpg', description: 'Personalised wax seal stamp with your custom design. Includes wooden handle set.', specs: ['Custom design', 'Brass stamp head', 'Wooden handle', 'Various sizes'], body: '<h3>How to Order</h3><p>Send your design via WhatsApp. We will create a custom brass wax seal stamp.</p>' },
+      'wax-spoon': { name: 'Wax Melting Spoon', category: 'Wax Seal', categoryLink: 'products.html#wax-seal', image: 'images/products/wax-spoon.png', description: 'Metal spoon for melting wax beads over a flame.', specs: ['Metal construction', 'Heat resistant handle', 'Essential accessory', 'Easy to use'], body: '<h3>How to Use</h3><p>Place wax beads in spoon, heat over candle, pour onto surface, and stamp.</p>' },
+      'melting-kit': { name: 'Melting Kit Set', category: 'Wax Seal', categoryLink: 'products.html#wax-seal', image: 'images/products/melting-kit.png', description: 'Complete wax melting kit with spoon, furnace, and accessories.', specs: ['Spoon included', 'Furnace/stand', 'Complete kit', 'Easy setup'], body: '<h3>What\'s Included</h3><p>Everything you need to start making wax seals. Just add wax beads and your stamp.</p>' },
+      'hot-gun': { name: 'Hot Gun Tool', category: 'Wax Seal', categoryLink: 'products.html#wax-seal', image: 'images/products/hot-gun.png', description: 'Heat gun for melting wax sticks directly onto surface.', specs: ['Electric heat gun', 'Easy to use', 'Quick melting', 'For wax sticks'], body: '<h3>How to Use</h3><p>Insert wax stick into gun, heat, and apply directly to surface before stamping.</p>' },
+      'wax-melting-pot': { name: 'Wax Melting Pot', category: 'Wax Seal', categoryLink: 'products.html#wax-seal', image: 'images/products/wax-melting-pot.png', description: 'Electric wax melting pot for high-volume wax seal production.', specs: ['Electric heating', 'High volume', 'Temperature control', 'Professional use'], body: '<h3>Ideal For</h3><p>Businesses and crafters producing large quantities of wax seals.</p>' },
+
+      // ===== WAX BEADS =====
+      'wax-red': { name: 'Red Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-red.png', description: 'Classic red sealing wax beads. Approx 100 beads per pack.', specs: ['~100 beads per pack', 'Classic red colour', 'For melting spoon use', 'Premium quality'], body: '<h3>Usage</h3><p>Melt 3-4 beads in spoon over candle flame. Pour onto surface and stamp.</p>' },
+      'wax-gold': { name: 'Electrum Gold Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-gold.png', description: 'Metallic electrum gold wax beads for luxurious seals.', specs: ['~100 beads per pack', 'Metallic gold', 'Luxurious finish', 'Premium quality'], body: '' },
+      'wax-silver': { name: 'Silver Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-silver.png', description: 'Elegant silver wax beads for refined seals.', specs: ['~100 beads per pack', 'Silver metallic', 'Elegant finish', 'Premium quality'], body: '' },
+      'wax-noble-gold': { name: 'Noble Gold Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-noble-gold.png', description: 'Rich noble gold wax beads.', specs: ['~100 beads per pack', 'Noble gold', 'Rich finish', 'Premium quality'], body: '' },
+      'wax-rose': { name: 'Rose Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-rose.png', description: 'Beautiful rose-coloured wax beads.', specs: ['~100 beads per pack', 'Rose colour', 'Romantic finish', 'Premium quality'], body: '' },
+      'wax-maroon': { name: 'Maroon Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-maroon.png', description: 'Deep maroon wax beads.', specs: ['~100 beads per pack', 'Deep maroon', 'Traditional look', 'Premium quality'], body: '' },
+      'wax-purple': { name: 'Purple Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-purple.png', description: 'Royal purple wax beads.', specs: ['~100 beads per pack', 'Royal purple', 'Distinctive look', 'Premium quality'], body: '' },
+      'wax-black': { name: 'Black Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-black.png', description: 'Bold black wax beads.', specs: ['~100 beads per pack', 'Bold black', 'Dramatic finish', 'Premium quality'], body: '' },
+      'wax-white': { name: 'White Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-white.png', description: 'Clean white wax beads.', specs: ['~100 beads per pack', 'Clean white', 'Minimalist look', 'Premium quality'], body: '' },
+      'wax-green': { name: 'Green Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-green.png', description: 'Natural green wax beads.', specs: ['~100 beads per pack', 'Natural green', 'Botanical theme', 'Premium quality'], body: '' },
+      'wax-lightpink': { name: 'Light Pink Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-lightpink.png', description: 'Soft light pink wax beads.', specs: ['~100 beads per pack', 'Light pink', 'Wedding-perfect', 'Premium quality'], body: '' },
+      'wax-green-bronze': { name: 'Green Bronze Wax Beads', category: 'Wax Beads', categoryLink: 'products.html#wax-beads', image: 'images/products/wax-green-bronze.png', description: 'Metallic green bronze wax beads.', specs: ['~100 beads per pack', 'Green bronze metallic', 'Unique finish', 'Premium quality'], body: '' },
+
+      // ===== INK & REFILLS =====
+      'stamp-pad-micro': { name: 'Stamp Pad Micro - Black', category: 'Ink & Refills', categoryLink: 'products.html#ink-refills', image: 'images/products/stamp-pad-micro.png', description: 'Compact stamp pad with black ink.', specs: ['Black ink', 'Compact size', 'Felt pad', 'For rubber stamps'], body: '' },
+      'colop-refill': { name: 'COLOP Refill Ink - Black', category: 'Ink & Refills', categoryLink: 'products.html#ink-refills', image: 'images/products/colop-refill.png', description: 'Refill ink for COLOP self-inking stamps. 25ml bottle.', specs: ['25ml bottle', 'Black ink', 'For COLOP stamps', 'Easy application'], body: '<h3>How to Refill</h3><p>Remove ink pad from stamp, apply 2-3 drops of ink, wait 30 minutes before use.</p>' },
+      'neon-ink': { name: 'Neon Ink - Pink', category: 'Ink & Refills', categoryLink: 'products.html#ink-refills', image: 'images/products/neon-ink.png', description: 'Bright neon pink ink for eye-catching stamp impressions.', specs: ['Neon pink', 'Bright colour', 'For self-inking stamps', 'Eye-catching'], body: '' },
+      'textile-ink': { name: 'NORIS Textile Ink', category: 'Ink & Refills', categoryLink: 'products.html#ink-refills', image: 'images/products/textile-ink.png', description: 'Textile ink for stamping on fabric. Wash-resistant after heat setting.', specs: ['For fabric/textile', 'Wash-resistant', 'Heat set required', 'Multiple colours'], body: '<h3>How to Use</h3><p>Stamp on fabric, let dry, then iron to heat-set for wash resistance.</p>' },
+      'uv-ink': { name: 'UV Invisible Ink', category: 'Ink & Refills', categoryLink: 'products.html#ink-refills', image: 'images/products/uv-ink.png', description: 'Invisible UV security ink. Only visible under UV light.', specs: ['Invisible to naked eye', 'UV light activated', 'Security application', 'NORIS brand'], body: '<h3>Ideal For</h3><p>Security marking, anti-counterfeiting, and event re-entry stamps.</p>' },
+      'fast-dry-ink': { name: 'NORIS Fast Drying Ink', category: 'Ink & Refills', categoryLink: 'products.html#ink-refills', image: 'images/products/noris-fast-dry.jpg', description: 'Industrial fast-drying ink for non-porous surfaces like metal, plastic, and glass.', specs: ['Fast drying', 'For non-porous surfaces', 'Metal, plastic, glass', 'NORIS brand'], body: '<h3>Ideal For</h3><p>Industrial stamping on metal parts, plastic packaging, and glass surfaces.</p>' }
+    };
+
+    const WA_NUMBER = '60167737910';
+
+    function getProductId() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id') || '';
+    }
+
+    function getWhatsAppUrl(product) {
+      const msg = encodeURIComponent(`Hi, I'm interested in: ${product.name}\n\nPlease provide a quote.`);
+      return `https://wa.me/${WA_NUMBER}?text=${msg}`;
+    }
+
+    function renderProduct(product) {
+      const waUrl = getWhatsAppUrl(product);
+      const imageHtml = product.image
+        ? `<img src="${product.image}" alt="${product.name}" style="width:100%;height:100%;object-fit:contain;padding:1rem;">`
+        : '';
+      return `
+        <nav class="product-detail__breadcrumb">
+          <a href="index.html">Home</a> / <a href="products.html">Products</a> / <a href="${product.categoryLink}">${product.category}</a> / ${product.name}
+        </nav>
+        <div class="product-detail__grid">
+          <div class="product-detail__image">${imageHtml}</div>
+          <div class="product-detail__info">
+            <h1>${product.name}</h1>
+            <p>${product.description}</p>
+            <div class="product-detail__specs">
+              <h4>Specifications</h4>
+              <ul>${product.specs.map(s => `<li>${s}</li>`).join('')}</ul>
+            </div>
+            <a href="${waUrl}" class="btn btn--primary" target="_blank" rel="noopener">
+              Get Quote via WhatsApp
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+          </div>
+        </div>
+        ${product.body ? `<div class="product-detail__body">${product.body}</div>` : ''}
+      `;
+    }
+
+    function init() {
+      const id = getProductId();
+      const product = PRODUCTS[id];
+      const container = document.getElementById('product-content');
+
+      if (!product) {
+        container.innerHTML = `
+          <p>Product not found.</p>
+          <p><a href="products.html">&larr; Back to Products</a></p>
+        `;
+        return;
+      }
+
+      document.title = `${product.name} | PolyStamp & Print Services`;
+      container.innerHTML = renderProduct(product);
+    }
+
+    init();
+
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+    const navToggle = document.getElementById('navToggle');
+    navToggle?.addEventListener('click', () => document.body.classList.toggle('menu-open'));
+  </script>
+</body>
+</html>
