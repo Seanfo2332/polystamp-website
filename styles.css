@@ -157,6 +157,28 @@ body.menu-open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rota
 body.menu-open .nav-toggle span:nth-child(2) { opacity: 0; }
 body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
+.nav-close {
+  display: none;
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-text);
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+.nav-close:hover {
+  background: var(--color-accent-soft);
+}
+
 /* ========== Hero — Split Layout with Floating Images ========== */
 .hero-split {
   position: relative;
@@ -1207,6 +1229,7 @@ body.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rot
 @media (max-width: 768px) {
   .logo__img { height: 52px; }
   .nav-toggle { display: flex; }
+  .nav-close { display: flex; }
   .nav-links {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;

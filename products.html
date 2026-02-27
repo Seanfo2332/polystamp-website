@@ -20,7 +20,8 @@
         <span></span>
         <span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
+        <button class="nav-close" id="navClose" aria-label="Close menu">&times;</button>
         <li><a href="index.html#services">Services</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="index.html#how-it-works">How It Works</a></li>
@@ -1256,6 +1257,10 @@
     navToggle?.addEventListener('click', () => {
       document.body.classList.toggle('menu-open');
       navToggle.setAttribute('aria-expanded', navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+    });
+    document.getElementById('navClose')?.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+      navToggle.setAttribute('aria-expanded', 'false');
     });
     document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => document.body.classList.remove('menu-open')));
   </script>
